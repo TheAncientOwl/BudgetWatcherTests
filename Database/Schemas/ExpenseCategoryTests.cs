@@ -23,7 +23,7 @@ namespace BudgetDjinniTests.Database.Schemas
         public void LoadFromId()
         {
             ExpenseCategory cat1 = new ExpenseCategory("Lorem ipsum", "Lorem ipsum");
-            cat1.Save();
+            cat1.Insert();
 
             ExpenseCategory cat2 = new ExpenseCategory(cat1.Id);
 
@@ -34,7 +34,7 @@ namespace BudgetDjinniTests.Database.Schemas
         public void Update()
         {
             ExpenseCategory cat1 = new ExpenseCategory("Lorem ipsum", "Lorem ipsum");
-            cat1.Save();
+            cat1.Insert();
 
             cat1.Name = "random";
             cat1.Description = "something";
@@ -49,7 +49,7 @@ namespace BudgetDjinniTests.Database.Schemas
         public void DeleteIncome()
         {
             ExpenseCategory cat1 = new ExpenseCategory("Lorem ipsum", "Lorem ipsum");
-            cat1.Save();
+            cat1.Insert();
 
             ExpenseCategory cat2 = new ExpenseCategory(cat1.Id);
             cat2.Delete();

@@ -23,7 +23,7 @@ namespace BudgetDjinniTests.Database.Schemas
         public void LoadFromId()
         {
             ExpenseFrequency freq1 = new ExpenseFrequency("Lunara", 30);
-            freq1.Save();
+            freq1.Insert();
 
             ExpenseFrequency freq2 = new ExpenseFrequency(freq1.Id);
 
@@ -34,7 +34,7 @@ namespace BudgetDjinniTests.Database.Schemas
         public void Update()
         {
             ExpenseFrequency freq1 = new ExpenseFrequency("Random", 15);
-            freq1.Save();
+            freq1.Insert();
 
             freq1.Name = "Lunara";
             freq1.Days = 30;
@@ -49,7 +49,7 @@ namespace BudgetDjinniTests.Database.Schemas
         public void Delete()
         {
             ExpenseFrequency freq1 = new ExpenseFrequency("Random", 10);
-            freq1.Save();
+            freq1.Insert();
 
             ExpenseFrequency freq2 = new ExpenseFrequency(freq1.Id);
             freq2.Delete();

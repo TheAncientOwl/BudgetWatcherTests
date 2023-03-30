@@ -23,13 +23,13 @@ namespace BudgetDjinniTests.Database.Schemas
         public void LoadFromId()
         {
             ExpenseCategory category = new ExpenseCategory("Music", "Lorem ipsum dolor sit amet");
-            category.Save();
+            category.Insert();
 
             ExpenseFrequency frequency = new ExpenseFrequency("Monthly", 30);
-            frequency.Save();
+            frequency.Insert();
 
             Expense expense1 = new Expense("Spotify", 2.5, DateTime.Now, category.Id, frequency.Id);
-            expense1.Save();
+            expense1.Insert();
 
             Expense expense2 = new Expense(expense1.Id);
             
@@ -41,25 +41,25 @@ namespace BudgetDjinniTests.Database.Schemas
         {
             // create and save expense1
             ExpenseCategory expenseCategory = new ExpenseCategory("Music", "Lorem ipsum dolor sit amet");
-            expenseCategory.Save();
+            expenseCategory.Insert();
 
             ExpenseFrequency expenseFrequency = new ExpenseFrequency("Monthly", 30);
-            expenseFrequency.Save();
+            expenseFrequency.Insert();
 
             Expense expense1 = new Expense("Spotify", 2.5, DateTime.Now, expenseCategory.Id, expenseFrequency.Id);
 
-            expense1.Save();
+            expense1.Insert();
 
             // modify and update expense1
             expense1.Name = "Water";
             expense1.Value = 1;
 
             ExpenseCategory expenseCategory2 = new ExpenseCategory("House", "Lorem ipsum");
-            expenseCategory2.Save();
+            expenseCategory2.Insert();
             expense1.Category = expenseCategory2;
 
             ExpenseFrequency expenseFrequency2 = new ExpenseFrequency("Daily", 1);
-            expenseFrequency2.Save();
+            expenseFrequency2.Insert();
             expense1.Frequency = expenseFrequency2;
 
             expense1.Update();
@@ -75,14 +75,14 @@ namespace BudgetDjinniTests.Database.Schemas
         public void Delete()
         {
             ExpenseCategory expenseCategory = new ExpenseCategory("Music", "Lorem ipsum dolor sit amet");
-            expenseCategory.Save();
+            expenseCategory.Insert();
 
             ExpenseFrequency expenseFrequency = new ExpenseFrequency("Monthly", 30);
-            expenseFrequency.Save();
+            expenseFrequency.Insert();
 
             Expense expense1 = new Expense("Spotify", 2.5, DateTime.Now, expenseCategory.Id, expenseFrequency.Id);
 
-            expense1.Save();
+            expense1.Insert();
 
             expense1.Delete();
 

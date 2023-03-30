@@ -23,7 +23,7 @@ namespace BudgetDjinniTests.Database.Schemas
         public void LoadFromId()
         {
             Income income1 = new Income("Salariu", 4000);
-            income1.Save();
+            income1.Insert();
 
             Income income2 = new Income(income1.Id);
 
@@ -34,7 +34,7 @@ namespace BudgetDjinniTests.Database.Schemas
         public void Update()
         {
             Income income1 = new Income("Salariu", 2500);
-            income1.Save();
+            income1.Insert();
 
             income1.Value = 5000;
             income1.Update();
@@ -47,7 +47,7 @@ namespace BudgetDjinniTests.Database.Schemas
         public void Delete()
         {
             Income income1 = new Income("Test", 1200);
-            income1.Save();
+            income1.Insert();
 
             Income income2 = new Income(income1.Id);
             income2.Delete();

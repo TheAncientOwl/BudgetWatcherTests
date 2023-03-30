@@ -68,6 +68,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Database\Schemas\IncomeTests.cs" />
+    <Compile Include="Database\Schemas\ExpenseFrequencyTests.cs" />
+    <Compile Include="Database\Schemas\ExpenseCategoryTests.cs" />
+    <Compile Include="Database\Schemas\ExpenseTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

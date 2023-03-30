@@ -1,8 +1,8 @@
-﻿using BudgetDjinni.Database.Schemas;
+﻿using BudgetWatcher.Database.Schemas;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
-namespace BudgetDjinniTests.Database.Schemas
+namespace BudgetWatcherTests.Database.Schemas
 {
     [TestClass]
     public class ExpenseCategoryTests
@@ -10,13 +10,13 @@ namespace BudgetDjinniTests.Database.Schemas
         [ClassInitialize]
         public static void ClassInitialize(TestContext context)
         {
-            BudgetDjinni.Database.Manager.Instance.OpenOrCreateDatabase();
+            BudgetWatcher.Database.Manager.Instance.OpenOrCreateDatabase();
         }
 
         [ClassCleanup]
         public static void ClassCleanup()
         {
-            BudgetDjinni.Database.Manager.Instance.CloseDatabase();
+            BudgetWatcher.Database.Manager.Instance.CloseDatabase();
         }
 
         [TestMethod]

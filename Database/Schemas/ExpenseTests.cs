@@ -28,7 +28,7 @@ namespace BudgetWatcherTests.Database.Schemas
             ExpenseFrequency frequency = new ExpenseFrequency("Monthly", 30);
             frequency.Insert();
 
-            Expense expense1 = new Expense("Spotify", 2.5, DateTime.Now, category.Id, frequency.Id);
+            Expense expense1 = new Expense("Spotify", 2.5, DateTime.Now, "no details", category.Id, frequency.Id);
             expense1.Insert();
 
             Expense expense2 = new Expense(expense1.Id);
@@ -46,13 +46,14 @@ namespace BudgetWatcherTests.Database.Schemas
             ExpenseFrequency expenseFrequency = new ExpenseFrequency("Monthly", 30);
             expenseFrequency.Insert();
 
-            Expense expense1 = new Expense("Spotify", 2.5, DateTime.Now, expenseCategory.Id, expenseFrequency.Id);
+            Expense expense1 = new Expense("Spotify", 2.5, DateTime.Now, "no details", expenseCategory.Id, expenseFrequency.Id);
 
             expense1.Insert();
 
             // modify and update expense1
             expense1.Name = "Water";
             expense1.Value = 1;
+            expense1.Details = "Some details";
 
             ExpenseCategory expenseCategory2 = new ExpenseCategory("House", "Lorem ipsum");
             expenseCategory2.Insert();
@@ -80,7 +81,7 @@ namespace BudgetWatcherTests.Database.Schemas
             ExpenseFrequency expenseFrequency = new ExpenseFrequency("Monthly", 30);
             expenseFrequency.Insert();
 
-            Expense expense1 = new Expense("Spotify", 2.5, DateTime.Now, expenseCategory.Id, expenseFrequency.Id);
+            Expense expense1 = new Expense("Spotify", 2.5, DateTime.Now, "some details", expenseCategory.Id, expenseFrequency.Id);
 
             expense1.Insert();
 

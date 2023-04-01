@@ -25,7 +25,7 @@ namespace BudgetWatcherTests.Database.Schemas
             Income income1 = new Income("Salariu", 4000);
             income1.Insert();
 
-            Income income2 = new Income(income1.Id);
+            Income income2 = new Income((int)income1.Id);
 
             Assert.IsTrue(income1.Equals(income2));
         }

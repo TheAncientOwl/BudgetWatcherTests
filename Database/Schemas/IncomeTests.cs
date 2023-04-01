@@ -27,7 +27,10 @@ namespace BudgetWatcherTests.Database.Schemas
 
             Income income2 = new Income(income1.Id);
 
-            Assert.IsTrue(income1.Equals(income2));
+            Assert.IsTrue(
+                (income1.Id == income2.Id) && 
+                (income1.Name == income2.Name) && 
+                (income1.Value == income2.Value));
         }
 
         [TestMethod]

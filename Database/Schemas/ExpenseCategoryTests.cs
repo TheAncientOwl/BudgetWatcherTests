@@ -27,7 +27,10 @@ namespace BudgetWatcherTests.Database.Schemas
 
             ExpenseCategory cat2 = new ExpenseCategory(cat1.Id);
 
-            Assert.AreEqual(cat1, cat2);
+            Assert.IsTrue(
+                (cat1.Id == cat2.Id) &&
+                (cat1.Name == cat2.Name) &&
+                (cat1.Description == cat2.Description));
         }
 
         [TestMethod]

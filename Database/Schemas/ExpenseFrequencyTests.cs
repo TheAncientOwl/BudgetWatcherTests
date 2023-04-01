@@ -27,7 +27,10 @@ namespace BudgetWatcherTests.Database.Schemas
 
             ExpenseFrequency freq2 = new ExpenseFrequency(freq1.Id);
 
-            Assert.AreEqual(freq1, freq2);
+            Assert.IsTrue(
+                (freq1.Id == freq2.Id) &&
+                (freq1.Name == freq2.Name) &&
+                (freq1.Days == freq2.Days));
         }
 
         [TestMethod]
